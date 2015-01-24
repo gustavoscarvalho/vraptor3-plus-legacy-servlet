@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee"  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>vraptor-with-legacy-servlet</display-name>
+  <filter>
+    <filter-name>vraptor</filter-name>
+    <filter-class>br.com.caelum.vraptor.VRaptor</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>vraptor</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletLegado</display-name>
+    <servlet-name>ServletLegado</servlet-name>
+    <servlet-class>servlets.ServletLegado</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletLegado</servlet-name>
+    <url-pattern>/ServletLegado</url-pattern>
+  </servlet-mapping>
+</web-app>
