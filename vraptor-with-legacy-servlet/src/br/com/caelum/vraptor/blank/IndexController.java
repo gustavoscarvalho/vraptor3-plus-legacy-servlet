@@ -33,5 +33,10 @@ public class IndexController {
 	public void index() {
 		result.include("variable", "VRaptor!");
 	}
+	
+	@Path("/teste")
+	public void teste() {
+		result.include("variable", "VRaptor2!");
+	}
 
 }

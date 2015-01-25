@@ -18,9 +18,9 @@ public class MyRoutesParser extends PathAnnotationRoutesParser {
 	@Override
     protected String[] getURIsFor(Method javaMethod, Class<?> type) {
       String[] uris = super.getURIsFor(javaMethod, type);
-      for(int i = 0; i < uris.length; i++) {
-           uris[i] = "/rest" + uris[i];
-      }
+      //for(int i = 0; i < uris.length; i++) {
+      //     uris[i] = "/rest" + uris[i];
+     // }
       return uris;
     }
 }

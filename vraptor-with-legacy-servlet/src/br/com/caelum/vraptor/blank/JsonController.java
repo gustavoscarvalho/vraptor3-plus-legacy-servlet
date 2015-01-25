@@ -16,19 +16,16 @@
  */
 package br.com.caelum.vraptor.blank;
 
-import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
-import br.com.caelum.vraptor.view.Results;
 
 @Resource
 public class JsonController {
 
 	private final Result result;
 	
-
 	public JsonController(Result result) {
 		this.result = result;
 	}
