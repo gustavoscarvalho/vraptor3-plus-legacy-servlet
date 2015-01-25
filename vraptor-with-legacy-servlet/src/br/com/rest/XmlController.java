@@ -16,7 +16,6 @@
  */
 package br.com.rest;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,33 +26,28 @@ import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.com.caelum.vraptor.view.Results;
 import br.com.modelo.Carro;
-import br.com.util.Message;
 
 @Resource
-public class JsonController {
+public class XmlController {
 
-	@Inject private Result result;	
-	@Inject private Carro carro;
-	@Inject private Message message;
+	@Inject
+	public Result result;
 	
-	@Path("/json/carro")
+	@Inject
+	private Carro carro;
+	
+	@Path("/xml/carro")
 	public void carro() {
-		result.use(Results.json()).from(carro).serialize();
+		result.use(Results.xml()).from(carro).serialize();
 	}
 	
-	@Path("/json/carros")
+	@Path("/xml/carros")
 	public void carros() {
 		List<Carro> carros = new ArrayList<Carro>();
 		carros.add(carro);
 		carros.add(carro);
 		carros.add(carro);
- 		result.use(Results.json()).from(carros ).serialize();
-	}
-	
-	@Path("/json/carroString")
-	public void getCarroString() throws IOException {
-		String retorno = message.get("carro.correndo");
-		result.use(Results.json()).from(retorno).serialize();
+ 		result.use(Results.xml()).from(carros ).serialize();
 	}
 
 }
