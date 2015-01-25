@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package br.com.caelum.vraptor.blank;
+package br.com.rest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ import br.com.modelo.Carro;
 public class JsonController {
 
 	@Inject
-	private Result result;
+	public Result result;
 	
 	@Inject
 	private Carro carro;
