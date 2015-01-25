@@ -16,23 +16,36 @@
  */
 package br.com.caelum.vraptor.blank;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.view.Results;
+import br.com.modelo.Carro;
 
 @Resource
 public class JsonController {
 
-	private final Result result;
+	@Inject
+	private Result result;
 	
-	public JsonController(Result result) {
-		this.result = result;
-	}
-
+	@Inject
+	private Carro carro;
+	
 	@Path("/carro")
 	public void carro() {
-		result.include("variable", "VRaptor!");
+		result.use(Results.json()).from(carro).serialize();
+	}
+	
+	@Path("/carro")
+	public void carros() {
+		List<Carro> carros = new ArrayList<Carro>();
+		carros.add(carro);
+ 		result.use(Results.json()).from(carros ).serialize();
 	}
 
 }
