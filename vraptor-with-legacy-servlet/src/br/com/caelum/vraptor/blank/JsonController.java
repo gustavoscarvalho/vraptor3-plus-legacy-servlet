@@ -41,9 +41,11 @@ public class JsonController {
 		result.use(Results.json()).from(carro).serialize();
 	}
 	
-	@Path("/carro")
+	@Path("/carros")
 	public void carros() {
 		List<Carro> carros = new ArrayList<Carro>();
+		carros.add(carro);
+		carros.add(carro);
 		carros.add(carro);
  		result.use(Results.json()).from(carros ).serialize();
 	}
