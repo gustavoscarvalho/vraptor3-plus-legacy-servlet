@@ -15,7 +15,7 @@
     <description></description>
     <display-name>ServletLegado</display-name>
     <servlet-name>ServletLegado</servlet-name>
-    <servlet-class>servlets.ServletLegado</servlet-class>
+    <servlet-class>br.com.servlets.ServletLegado</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletLegado</servlet-name>

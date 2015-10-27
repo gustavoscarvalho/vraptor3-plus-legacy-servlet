@@ -33,27 +33,13 @@ import br.com.util.Message;
 public class JsonController {
 
 	@Inject private Result result;	
-	@Inject private Carro carro;
 	@Inject private Message message;
 	
+	//http://localhost:8080/vraptor-with-legacy-servlet/json/carro?carro.modelo=caixa&carro.proprietario=casa
 	@Path("/json/carro")
-	public void carro() {
+	public void carro(Carro carro) {
+		System.out.println(carro.getModelo());
 		result.use(Results.json()).from(carro).serialize();
-	}
-	
-	@Path("/json/carros")
-	public void carros() {
-		List<Carro> carros = new ArrayList<Carro>();
-		carros.add(carro);
-		carros.add(carro);
-		carros.add(carro);
- 		result.use(Results.json()).from(carros ).serialize();
-	}
-	
-	@Path("/json/carroString")
-	public void getCarroString() throws IOException {
-		String retorno = message.get("carro.correndo");
-		result.use(Results.json()).from(retorno).serialize();
 	}
 
 }

@@ -30,8 +30,8 @@ public class ServletLegado extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		out.write("teste");
-		JsonController json = new JsonController();
-		json.carros();
+		//JsonController json = new JsonController();
+		//json.carros();
 	}
 
 	/**
